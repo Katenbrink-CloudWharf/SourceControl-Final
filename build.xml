@@ -1,0 +1,39 @@
+<project name="SourceControl-Final" xmlns:sf="antlib:com.salesforce" basedir="." default="deploy">
+
+  <property name="sf.server" value="https://login.salesforce.com"/>
+  <import file="${basedir}/lib/exec_anon.xml"/> 
+  <import file="${basedir}/lib/undeploy.xml"/>
+
+  <import file="${basedir}/lib/ant-salesforce.xml"/>
+  <property file="build.properties"/>
+
+	<typedef 
+		uri="antlib:com.salesforce" 
+		resource="com/salesforce/antlib.xml" 
+		classpath="${basedir}/lib/ant-salesforce.jar"/>
+
+	<target name="retrieve.package"> 
+  	<sf:retrieve  
+    	username="${sf.pack.username}"  
+    	password="${sf.pack.password}"  
+    	retrieveTarget="${basedir}/src"  
+    	packageNames="Source Control"/>  
+	</target>
+
+  <target name="retrieve">
+    <sf:retrieve
+      username="${sf.pack.username}" 
+      password="${sf.pack.password}" 
+      serverurl="${sf.server}"
+      retrieveTarget="${basedir}/src"
+      unpackaged="${basedir}/src/package.xml"/>
+  </target>
+	
+	<target name="deploy" depends="undeploy">
+  	<sf:deploy  
+    	username="${sf.dev.username}"  
+    	password="${sf.dev.password}"  
+    	deployRoot="${basedir}/src"/>  		
+	</target>
+		
+</project>
