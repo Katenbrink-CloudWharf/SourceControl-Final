@@ -28,6 +28,22 @@
       retrieveTarget="${basedir}/src"
       unpackaged="${basedir}/src/package.xml"/>
   </target>
+
+  <target name="deploy.jenkins" depends="undeploy">
+    <sf:deploy 
+      username="${sf.build.username}" 
+      password="${sf.build.password}" 
+      serverurl="${sf.server}"
+      runAllTests="true"
+      deployRoot="${basedir}/src"/> 
+    <sf:deploy 
+      username="${sf.pack.username}" 
+      password="${sf.pack.password}" 
+      serverurl="${sf.server}"
+      checkOnly="true"
+      runAllTests="true"
+      deployRoot="${basedir}/src"/> 
+  </target>
 	
 	<target name="deploy" depends="undeploy">
   	<sf:deploy  
