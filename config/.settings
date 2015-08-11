@@ -1,0 +1,15 @@
+{
+    "username": "katenbrink1@sc.dev.com", 
+    "environment": "developer", 
+    "project_name": "SourceControl-Final", 
+    "workspace": "C:\\Users\\katenbrink\\Projekte", 
+    "org_url": "", 
+    "namespace": "", 
+    "id": "SUR1CD6YI9X5EQI6BVA2TAUV8VSDSZB1", 
+    "metadata_container": "1dc24000000Ve4nAAC", 
+    "subscription": [
+        "ApexClass", 
+        "ApexPage", 
+        "ApexTrigger"
+    ]
+}

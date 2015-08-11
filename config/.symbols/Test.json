@@ -1,0 +1,61 @@
+{
+    "properties": [], 
+    "externalReferences": [], 
+    "innerClasses": [], 
+    "interfaces": [], 
+    "constructors": [], 
+    "namespace": null, 
+    "name": "Test", 
+    "tableDeclaration": {
+        "type": "Test", 
+        "modifiers": [
+            "testMethod", 
+            "private"
+        ], 
+        "references": [], 
+        "location": {
+            "column": 15, 
+            "line": 2
+        }, 
+        "name": "Test"
+    }, 
+    "key": "01p2400000AzJxEAAV", 
+    "variables": [], 
+    "id": "01p2400000AzJxEAAV", 
+    "methods": [
+        {
+            "modifiers": [
+                "static", 
+                "testMethod", 
+                "private"
+            ], 
+            "name": "test_method_one", 
+            "parameters": [], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 4
+            }, 
+            "returnType": "void", 
+            "type": null
+        }, 
+        {
+            "modifiers": [
+                "static", 
+                "testMethod", 
+                "private"
+            ], 
+            "name": "test_method_two", 
+            "parameters": [], 
+            "visibility": "PRIVATE", 
+            "references": [], 
+            "location": {
+                "column": 22, 
+                "line": 8
+            }, 
+            "returnType": "void", 
+            "type": null
+        }
+    ]
+}
