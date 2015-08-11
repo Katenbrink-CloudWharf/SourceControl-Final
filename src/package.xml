@@ -7,6 +7,10 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>Test</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
         <members>SourceFile__c</members>
         <name>CustomObject</name>
     </types>
