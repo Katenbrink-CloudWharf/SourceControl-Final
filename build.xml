@@ -1,10 +1,10 @@
 <project name="SourceControl-Final" xmlns:sf="antlib:com.salesforce" basedir="." default="deploy">
 
-  <property name="sf.server" value="https://login.salesforce.com"/>
   <import file="${basedir}/lib/exec_anon.xml"/> 
   <import file="${basedir}/lib/undeploy.xml"/>
-
+  <import file="${basedir}/lib/edit_package_xml.xml"/>
   <import file="${basedir}/lib/ant-salesforce.xml"/>
+  
   <property file="build.properties"/>
 
 	<typedef 
@@ -18,9 +18,10 @@
     	password="${sf.pack.password}"  
     	retrieveTarget="${basedir}/src"  
     	packageNames="Source Control"/>  
+    <antcall target="removePackageXMLNamespacePrefix"/>
 	</target>
 
-  <target name="retrieve">
+  <target name="retrieve" depends="createFullPackageXML">
     <sf:retrieve
       username="${sf.pack.username}" 
       password="${sf.pack.password}" 
