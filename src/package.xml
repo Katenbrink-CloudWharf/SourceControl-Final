@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-	<types>
-		<members>SourceFileHandler</members>
-		<members>Test</members>
-		<name>ApexClass</name>
-	</types>
-	<types>
-		<members>SourceFile__c</members>
-		<name>CustomObject</name>
-	</types>
-	<types>
-		<members>SourceFile__c-Source File Layout</members>
-		<name>Layout</name>
-	</types>
-	<version>34.0</version>
+    <fullName>Source Control</fullName>
+    <apiAccessLevel>Unrestricted</apiAccessLevel>
+    <types>
+        <members>SourceFileHandler</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>SourceFile__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>SourceFile__c-Source File Layout</members>
+        <name>Layout</name>
+    </types>
+    <version>34.0</version>
 </Package>

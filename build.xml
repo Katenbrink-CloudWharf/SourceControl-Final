@@ -12,15 +12,6 @@
 		resource="com/salesforce/antlib.xml" 
 		classpath="${basedir}/lib/ant-salesforce.jar"/>
 
-	<target name="retrieve.package"> 
-  	<sf:retrieve  
-    	username="${sf.pack.username}"  
-    	password="${sf.pack.password}"  
-    	retrieveTarget="${basedir}/src"  
-    	packageNames="Source Control"/>  
-    <antcall target="removePackageXMLNamespacePrefix"/>
-	</target>
-
   <target name="retrieve" depends="createFullPackageXML">
     <sf:retrieve
       username="${sf.pack.username}" 
@@ -30,7 +21,23 @@
       unpackaged="${basedir}/src/package.xml"/>
   </target>
 
-  <target name="deploy.jenkins" depends="undeploy">
+	<target name="retrieve.package"> 
+  	<sf:retrieve  
+    	username="${sf.pack.username}"  
+    	password="${sf.pack.password}"  
+    	retrieveTarget="${basedir}/src"  
+    	packageNames="Source Control"/>  
+    <antcall target="removePackageXMLNamespacePrefix"/>
+	</target>
+  
+  <target name="deploy" depends="undeployDev">
+    <sf:deploy  
+      username="${sf.dev.username}"  
+      password="${sf.dev.password}"  
+      deployRoot="${basedir}/src"/>     
+  </target>
+
+  <target name="deploy.jenkins" depends="undeployBuild">
     <sf:deploy 
       username="${sf.build.username}" 
       password="${sf.build.password}" 
@@ -45,12 +52,14 @@
       runAllTests="true"
       deployRoot="${basedir}/src"/> 
   </target>
-	
-	<target name="deploy" depends="undeploy">
-  	<sf:deploy  
-    	username="${sf.dev.username}"  
-    	password="${sf.dev.password}"  
-    	deployRoot="${basedir}/src"/>  		
-	</target>
+
+  <target name="deploy.package">
+  <sf:deploy 
+      username="${sf.pack.username}" 
+      password="${sf.pack.password}" 
+      serverurl="${sf.server}"
+      runAllTests="true"
+      deployRoot="${basedir}/src"/>
+</target>
 		
 </project>
