@@ -13,5 +13,4 @@
 		<members>SourceFile__c-Source File Layout</members>
 		<name>Layout</name>
 	</types>
-	<version>30.0</version>
 </Package>
