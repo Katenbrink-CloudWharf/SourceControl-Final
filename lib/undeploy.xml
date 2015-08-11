@@ -28,7 +28,7 @@
 
 <target name="undeployBuild">
   <property name="sf.undeploy.username" value="${sf.build.username}"/>
-  <property name="sf.undeploy.password" value="$${sf.build.password}"/>
+  <property name="sf.undeploy.password" value="${sf.build.password}"/>
   <antcall target="undeploy"/>
 </target>
 
