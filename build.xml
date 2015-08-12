@@ -12,7 +12,8 @@
 		resource="com/salesforce/antlib.xml" 
 		classpath="${basedir}/lib/ant-salesforce.jar"/>
 
-  <target name="retrieve" depends="createFullPackageXML">
+<!--
+  <target name="retrieve.pack.all" depends="createFullPackageXML">
     <sf:retrieve
       username="${sf.pack.username}" 
       password="${sf.pack.password}" 
@@ -20,8 +21,9 @@
       retrieveTarget="${basedir}/src"
       unpackaged="${basedir}/src/package.xml"/>
   </target>
+-->
 
-	<target name="retrieve.package"> 
+	<target name="retrieve.pack"> 
   	<sf:retrieve  
     	username="${sf.pack.username}"  
     	password="${sf.pack.password}"  
@@ -30,7 +32,7 @@
     <antcall target="removePackageXMLNamespacePrefix"/>
 	</target>
   
-  <target name="deploy" depends="undeployDev">
+  <target name="deploy.dev" depends="undeployDev">
     <sf:deploy  
       username="${sf.dev.username}"  
       password="${sf.dev.password}"  
@@ -53,7 +55,7 @@
       deployRoot="${basedir}/src"/> 
   </target>
 
-  <target name="deploy.package">
+  <target name="deploy.pack">
   <sf:deploy 
       username="${sf.pack.username}" 
       password="${sf.pack.password}" 
